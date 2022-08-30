@@ -1,0 +1,28 @@
+/// Font
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap");
+
+$font-family-base: "Poppins";
+$h2-font-size: 1;
+$h3-font-size: 1rem;
+
+/// Colours
+$primary: #008288;
+$light: #f6f6f6;
+$body-bg: #ebebeb;
+$body-color: #000;
+
+$gradient: linear-gradient(90deg, rgba(0, 130, 136, 1) 0%, rgba(2, 105, 182, 1) 100%);
+
+.gradient {
+  background: $gradient;
+}
+
+/// Size
+.img-fluid.thumbnail {
+  max-width: 50px;
+}
+
+.img-fluid.profile {
+  width: 100%;
+  max-width: 150px;
+}

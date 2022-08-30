@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="dist/css/styles.css" />
     <script
       defer
@@ -34,10 +34,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a href="index.html" aria-current="page" class="nav-link active">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
               </li>
               <li class="nav-item">
-                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="profile.html" aria-current="page" class="nav-link active">Profile</a>
               </li>
             </ul>
             <a href="login.html" role="button" class="btn btn-primary gradient">Login</a>
@@ -47,27 +47,18 @@
     </header>
     <main class="py-3">
       <div class="container row mx-auto p-0">
-        <div class="container col-md-3 d-flex flex-column gap-3 mb-3">
-          <div>
-            <form class="d-flex me-auto card-body" role="search">
-              <div class="input-group">
-                <input class="form-control border-0 bg-white" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-primary" type="submit">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-search"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                    />
-                  </svg>
-                </button>
+        <div class="container col-md-3 d-flex flex-column gap-3">
+          <div class="card border-0">
+            <div
+              class="card-body d-flex flex-row-reverse flex-md-column-reverse justify-content-center gap-4 align-items-center text-center"
+            >
+              <div>
+                <h2>Anna S</h2>
+                <p>Rjukan, Norway</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
               </div>
-            </form>
+              <img src="./images/IMG_2740.jpeg" class="img-fluid profile rounded-circle" alt="profile picture" />
+            </div>
           </div>
           <div class="card border-0">
             <div class="card-body">
@@ -79,7 +70,7 @@
         <div class="container col-md-9 d-flex flex-column gap-3">
           <div class="card border-0 bg-white">
             <div class="card-body">
-              <h2>Create new post</h2>
+              <h2>Post on Annas wall</h2>
               <form>
                 <label for="text-area" class="form-label visually-hidden">Write something</label>
                 <textarea
@@ -126,54 +117,8 @@
               </form>
             </div>
           </div>
-          <div class="card border-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-1">
-                  <img
-                    src="./images/petter.jpg"
-                    alt="Petter profile picture"
-                    class="img-fluid thumbnail rounded-circle"
-                  />
-                </div>
-                <div class="col-11">
-                  <h3 class="m-0 mt-1">Petter</h3>
-                  <p>3 minutes ago</p>
-                </div>
-              </div>
-              <div class="row">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, fuga libero laboriosam
-                  exercitationem nesciunt nemo asperiores voluptates! Praesentium, sunt minima ratione quaerat totam id
-                  suscipit recusandae incidunt velit vel fuga?
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-1">
-                  <img
-                    src="./images/cecil.jpg"
-                    alt="Cecil profile picture"
-                    class="img-fluid thumbnail rounded-circle"
-                  />
-                </div>
-                <div class="col-11">
-                  <h3 class="m-0 mt-1">Cecil</h3>
-                  <p>7 minutes ago</p>
-                </div>
-              </div>
-              <div class="row">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, fuga libero laboriosam
-                  exercitationem nesciunt nemo asperiores voluptates! Praesentium, sunt minima ratione quaerat totam id
-                  suscipit recusandae incidunt velit vel fuga?
-                </p>
-              </div>
-            </div>
-          </div>
+          <div>Post</div>
+          <div>Post</div>
         </div>
       </div>
     </main>
