@@ -1,9 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap");
-.gradient {
-  background: linear-gradient(90deg, rgb(0, 130, 136) 0%, rgb(2, 105, 182) 100%);
-}
-
 .img-fluid.thumbnail {
   max-width: 50px;
 }
@@ -11,6 +7,14 @@
 .img-fluid.profile {
   width: 100%;
   max-width: 150px;
+}
+
+.card-login {
+  max-width: 700px;
+}
+
+.gradient {
+  background: linear-gradient(90deg, rgb(0, 130, 136) 0%, rgb(2, 105, 182) 100%);
 }
 
 /*!
@@ -655,12 +659,12 @@ progress {
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
+    max-width: 960px;
   }
 }
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
+    max-width: 960px;
   }
 }
 .row {
