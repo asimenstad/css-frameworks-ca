@@ -11,10 +11,23 @@ $light: #f6f6f6;
 $body-bg: #ebebeb;
 $body-color: #000;
 
-$gradient: linear-gradient(90deg, rgba(0, 130, 136, 1) 0%, rgba(2, 105, 182, 1) 100%);
+$gradient: linear-gradient(
+  to right,
+  rgba(2, 105, 182, 1),
+  rgba(0, 130, 136, 1),
+  rgba(0, 130, 136, 1),
+  rgb(0, 167, 176)
+);
 
-.gradient {
+.btn.gradient {
   background: $gradient;
+  background-size: 300% 100%;
+  transition: 0.2s ease-in-out;
+}
+
+.btn.gradient:hover {
+  background-position: 100% 0;
+  transition: 0.2s ease-in-out;
 }
 
 /// Size
