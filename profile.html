@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="dist/css/styles.css" />
     <script
       defer
@@ -16,8 +16,8 @@
     <script defer src="./src/js/add-contacts.js"></script>
   </head>
   <body>
-    <header class=" bg-white">
-      <nav class="navbar navbar-expand-lg mx-auto ">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-white">
         <div class="container">
           <a href="index.html" class="navbar-brand"><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,10 +46,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a href="index.html" aria-current="page" class="nav-link active">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
               </li>
               <li class="nav-item">
-                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="profile.html" aria-current="page" class="nav-link active">Profile</a>
               </li>
             </ul>
             <a href="login.html" role="button" class="btn btn-primary gradient">Login</a>
@@ -57,29 +57,24 @@
         </div>
       </nav>
     </header>
-    <main class=" py-4">
-      <div class="container row p-0 mx-auto ">
-        <div class="container col-md-3  d-flex flex-column gap-3 mb-3">
-          <div >
-            <form class="d-flex me-auto" role="search">
-              <div class="input-group">
-                <input class="form-control border-0 bg-white" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-primary gradient" type="submit">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-search"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                    />
-                  </svg>
-                </button>
+    <main class="py-4">
+      <div class="container row mx-auto p-0 max-width">
+        <div class="container col-md-3 d-flex flex-column gap-3 mb-3">
+          <div class="card border-0">
+            <div
+              class="card-body d-flex flex-row-reverse flex-md-column-reverse justify-content-center gap-4 align-items-center text-md-center"
+            >
+              <div>
+                <h2>Anna</h2>
+                <div class="d-flex align-items-center justify-content-md-center text-muted gap-1 mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill " viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg>
+                <p class="m-0">Rjukan</p>
               </div>
-            </form>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+              </div>
+              <img src="./images/profile.jpg" class="img-fluid profile rounded-circle" alt="profile picture" />
+            </div>
           </div>
           <div class="card border-0">
             <div class="card-body">
@@ -88,10 +83,10 @@
             </div>
           </div>
         </div>
-        <div class="container col-md-9  d-flex flex-column gap-3">
+        <div class="container col-md-9 d-flex flex-column gap-3">
           <div class="card border-0 bg-white">
             <div class="card-body">
-              <h2>Create new post</h2>
+              <h2>Post on Anna's wall</h2>
               <form>
                 <label for="text-area" class="form-label visually-hidden">Write something</label>
                 <textarea
@@ -101,7 +96,7 @@
                   placeholder="Hello..."
                 ></textarea>
                 <div class="d-flex gap-3 mt-3">
-                  <button type="button" class="btn bg-light text-primary ">
+                  <button type="button" class="btn bg-light text-primary">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -138,7 +133,7 @@
               </form>
             </div>
           </div>
-          <div class="card border-0 ">
+          <div class="card border-0">
             <div class="card-body">
               <div class="row">
                 <div class="col-auto">
@@ -150,7 +145,7 @@
                 </div>
                 <div class="col-auto">
                   <h3 class="m-0 mt-1">Petter</h3>
-                  <p>5 minutes ago</p>
+                  <p class="text-muted">5 minutes ago</p>
                 </div>
               </div>
               <div class="row">
@@ -162,7 +157,7 @@
               </div>
             </div>
           </div>
-          <div class="card border-0 ">
+          <div class="card border-0">
             <div class="card-body">
               <div class="row">
                 <div class="col-auto">
@@ -174,7 +169,7 @@
                 </div>
                 <div class="col-auto">
                   <h3 class="m-0 mt-1">Cecil</h3>
-                  <p>7 minutes ago</p>
+                  <p class="text-muted">7 minutes ago</p>
                 </div>
               </div>
               <div >
@@ -184,7 +179,7 @@
               </div>
             </div>
           </div>
-          <div class="card border-0 ">
+          <div class="card border-0">
             <div class="card-body">
               <div class="row">
                 <div class="col-auto">
@@ -210,19 +205,19 @@
       </div>
     </main>
     <footer class="bg-white p-3 "><div class="container d-flex justify-content-center">
-      <div class="d-flex gap-2 align-items-center">  <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          fill="currentColor"
-          class="bi bi-flower2 "
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M8 16a4 4 0 0 0 4-4 4 4 0 0 0 0-8 4 4 0 0 0-8 0 4 4 0 1 0 0 8 4 4 0 0 0 4 4zm3-12c0 .073-.01.155-.03.247-.544.241-1.091.638-1.598 1.084A2.987 2.987 0 0 0 8 5c-.494 0-.96.12-1.372.331-.507-.446-1.054-.843-1.597-1.084A1.117 1.117 0 0 1 5 4a3 3 0 0 1 6 0zm-.812 6.052A2.99 2.99 0 0 0 11 8a2.99 2.99 0 0 0-.812-2.052c.215-.18.432-.346.647-.487C11.34 5.131 11.732 5 12 5a3 3 0 1 1 0 6c-.268 0-.66-.13-1.165-.461a6.833 6.833 0 0 1-.647-.487zm-3.56.617a3.001 3.001 0 0 0 2.744 0c.507.446 1.054.842 1.598 1.084.02.091.03.174.03.247a3 3 0 1 1-6 0c0-.073.01-.155.03-.247.544-.242 1.091-.638 1.598-1.084zm-.816-4.721A2.99 2.99 0 0 0 5 8c0 .794.308 1.516.812 2.052a6.83 6.83 0 0 1-.647.487C4.66 10.869 4.268 11 4 11a3 3 0 0 1 0-6c.268 0 .66.13 1.165.461.215.141.432.306.647.487zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-          />
-        </svg>
-     <p class="m-0">&copy; 2022 Company name</p></div>
-  </div></footer>
+        <div class="d-flex gap-2 align-items-center">  <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-flower2 "
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 16a4 4 0 0 0 4-4 4 4 0 0 0 0-8 4 4 0 0 0-8 0 4 4 0 1 0 0 8 4 4 0 0 0 4 4zm3-12c0 .073-.01.155-.03.247-.544.241-1.091.638-1.598 1.084A2.987 2.987 0 0 0 8 5c-.494 0-.96.12-1.372.331-.507-.446-1.054-.843-1.597-1.084A1.117 1.117 0 0 1 5 4a3 3 0 0 1 6 0zm-.812 6.052A2.99 2.99 0 0 0 11 8a2.99 2.99 0 0 0-.812-2.052c.215-.18.432-.346.647-.487C11.34 5.131 11.732 5 12 5a3 3 0 1 1 0 6c-.268 0-.66-.13-1.165-.461a6.833 6.833 0 0 1-.647-.487zm-3.56.617a3.001 3.001 0 0 0 2.744 0c.507.446 1.054.842 1.598 1.084.02.091.03.174.03.247a3 3 0 1 1-6 0c0-.073.01-.155.03-.247.544-.242 1.091-.638 1.598-1.084zm-.816-4.721A2.99 2.99 0 0 0 5 8c0 .794.308 1.516.812 2.052a6.83 6.83 0 0 1-.647.487C4.66 10.869 4.268 11 4 11a3 3 0 0 1 0-6c.268 0 .66.13 1.165.461.215.141.432.306.647.487zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+            />
+          </svg>
+       <p class="m-0">&copy; 2022 Company name</p></div>
+    </div></footer>
   </body>
 </html>
