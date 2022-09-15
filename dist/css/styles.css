@@ -13,6 +13,10 @@
   max-width: 700px;
 }
 
+.btn-sort {
+  max-width: 110px;
+}
+
 .btn.gradient {
   background: linear-gradient(to right, rgb(2, 105, 182), rgb(0, 130, 136), rgb(0, 130, 136), rgb(0, 167, 176));
   background-size: 300% 100%;
