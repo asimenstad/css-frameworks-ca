@@ -44,21 +44,16 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-fill">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a href="index.html" aria-current="page" class="nav-link">Home</a>
+                <a href="index.html" aria-current="page" class="nav-link active">Home</a>
               </li>
               <li class="nav-item">
                 <a href="profile.html" class="nav-link">Profile</a>
               </li>
             </ul>
-            <ul class="navbar-nav me-auto mb-lg-0 gap-2">
-              <li class="nav-item"><a href="signup.html" class="nav-link">Sign up</a></li>
-              <li class="nav-item">
-                <a href="login.html" role="button" class="btn btn-primary gradient">Login</a>
-              </li>
-            </ul>
+            <a href="login.html" role="button" class="btn btn-primary gradient">Login</a>
           </div>
         </div>
       </nav>
@@ -66,7 +61,7 @@
     <main class="py-4 container vh-100">
       <div class="card card-login border-0 p-4 mx-auto">
         <div class="card-body">
-          <h1 class="text-center">Log in</h1>
+          <h1 class="text-center">Sign in</h1>
           <form action="./profile.html" class="d-flex flex-column was-validated">
             <div class="mb-4">
               <label for="email" class="form-label">Email</label>
@@ -94,11 +89,11 @@
               />
               <div class="invalid-feedback">Incorrect password. Please try again.</div>
             </div>
-            <button type="submit" class="btn btn-primary align-self-center gradient">Log in</button>
+            <button type="submit" class="btn btn-primary align-self-center gradient">Sign in</button>
           </form>
           <div class="mt-5 mb-4 d-flex flex-column align-items-center">
             <p>Don't have an account?</p>
-            <a href="signup.html" class="text-decoration-none">Create account</a>
+            <a href="#" class="text-decoration-none">Create account</a>
           </div>
         </div>
       </div>
