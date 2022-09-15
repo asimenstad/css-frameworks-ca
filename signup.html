@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Sign up</title>
     <link rel="stylesheet" href="dist/css/styles.css" />
     <script
       defer
@@ -54,7 +54,7 @@
               </li>
             </ul>
             <ul class="navbar-nav me-auto mb-lg-0 gap-2">
-              <li class="nav-item"><a href="signup.html" class="nav-link">Sign up</a></li>
+              <li class="nav-item"><a href="signup.html" class="nav-link active">Sign up</a></li>
               <li class="nav-item">
                 <a href="login.html" role="button" class="btn btn-primary gradient">Login</a>
               </li>
@@ -66,8 +66,22 @@
     <main class="py-4 container vh-100">
       <div class="card card-login border-0 p-4 mx-auto">
         <div class="card-body">
-          <h1 class="text-center">Log in</h1>
-          <form action="./profile.html" class="d-flex flex-column was-validated">
+          <h1 class="text-center">Welcome</h1>
+          <p class="text-center">Sign up to create account</p>
+          <form action="./profile.html" class="d-flex flex-column">
+            <div class="mb-4">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                name="name"
+                class="form-control border-0 bg-light"
+                id="name"
+                aria-describedby="name"
+                placeholder="Kari Nordmann"
+                required
+              />
+              <div class="invalid-feedback">Please enter your name</div>
+            </div>
             <div class="mb-4">
               <label for="email" class="form-label">Email</label>
               <input
@@ -79,7 +93,7 @@
                 placeholder="example@example.no"
                 required
               />
-              <div class="invalid-feedback">Please enter your email address</div>
+              <div class="invalid-feedback">Please enter a valid email address</div>
             </div>
             <div class="mb-4">
               <label for="password" class="form-label">Password</label>
@@ -94,12 +108,8 @@
               />
               <div class="invalid-feedback">Incorrect password. Please try again.</div>
             </div>
-            <button type="submit" class="btn btn-primary align-self-center gradient">Log in</button>
+            <button type="submit" class="btn btn-primary align-self-center gradient">Sign up</button>
           </form>
-          <div class="mt-5 mb-4 d-flex flex-column align-items-center">
-            <p>Don't have an account?</p>
-            <a href="signup.html" class="text-decoration-none">Create account</a>
-          </div>
         </div>
       </div>
     </main>
