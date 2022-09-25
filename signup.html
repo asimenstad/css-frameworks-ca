@@ -12,8 +12,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script defer src="./src/js/contacts.js"></script>
-    <script defer src="./src/js/add-contacts.js"></script>
+    <script type="module" src="js/main.mjs"></script>
   </head>
   <body>
     <header>
@@ -68,19 +67,22 @@
         <div class="card-body">
           <h1 class="text-center">Welcome</h1>
           <p class="text-center">Sign up to create account</p>
-          <form action="./profile.html" class="d-flex flex-column">
+          <div id="form-feedback"></div>
+          <form class="d-flex flex-column was-validated" id="sign-up-form">
             <div class="mb-4">
-              <label for="name" class="form-label">Name</label>
+              <label for="name" class="form-label">Username</label>
               <input
                 type="text"
                 name="name"
                 class="form-control border-0 bg-light"
-                id="name"
-                aria-describedby="name"
-                placeholder="Kari Nordmann"
+                id="username"
+                aria-describedby="username"
+                pattern="^[\w]+$"
                 required
               />
-              <div class="invalid-feedback">Please enter your name</div>
+              <div class="text-muted fst-italic fw-light">
+                The username must not contain punctuation symbols apart from underscore.
+              </div>
             </div>
             <div class="mb-4">
               <label for="email" class="form-label">Email</label>
@@ -90,10 +92,10 @@
                 class="form-control border-0 bg-light"
                 id="email"
                 aria-describedby="email"
-                placeholder="example@example.no"
+                pattern="^[\w\-.]+@(stud.)?noroff.no$"
                 required
               />
-              <div class="invalid-feedback">Please enter a valid email address</div>
+              <div class="text-muted fst-italic fw-light">The email must be a valid noroff.no address.</div>
             </div>
             <div class="mb-4">
               <label for="password" class="form-label">Password</label>
@@ -103,10 +105,10 @@
                 class="form-control border-0 bg-light"
                 id="password"
                 aria-describedby="password"
-                placeholder="******"
+                minlength="8"
                 required
               />
-              <div class="invalid-feedback">Incorrect password. Please try again.</div>
+              <div class="text-muted fst-italic fw-light">The password must be at least 8 characters.</div>
             </div>
             <button type="submit" class="btn btn-primary align-self-center gradient">Sign up</button>
           </form>
