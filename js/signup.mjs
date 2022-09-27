@@ -1,7 +1,12 @@
+import { BASE_URL } from "./main.mjs";
+
 export const signUpForm = document.getElementById("sign-up-form");
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
 const feedback = document.getElementById("form-feedback");
 
-export async function signUp(url, data) {
+async function signUp(url, data) {
   try {
     const postData = {
       method: "POST",
@@ -34,4 +39,15 @@ function displayError() {
 
 function displaySuccess() {
   feedback.innerHTML = `<p class="text-center text-success">Success! Your account was created.</p>`;
+}
+export function submitSignUp() {
+  signUpForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const userSignUp = {
+      name: username.value,
+      email: email.value,
+      password: password.value,
+    };
+    signUp(`${BASE_URL}/api/v1/social/auth/register`, userSignUp);
+  });
 }
