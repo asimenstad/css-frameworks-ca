@@ -3,8 +3,14 @@
 }
 
 .img-fluid.profile {
-  width: 100%;
   max-width: 150px;
+}
+
+.img-fluid.thumbnail,
+.img-fluid.profile {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 100%;
 }
 
 .card-login {

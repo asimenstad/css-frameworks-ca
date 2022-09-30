@@ -3,7 +3,7 @@ import { BASE_URL } from "./main.mjs";
 export const loginForm = document.getElementById("login-form");
 const loginEmail = document.getElementById("login-email");
 const loginPassword = document.getElementById("login-password");
-const loginFeedback = document.getElementById("login-feedback");
+const loginFeedbackContainer = document.getElementById("login-feedback");
 
 async function logIn(url, data) {
   try {
@@ -17,7 +17,9 @@ async function logIn(url, data) {
     const response = await fetch(url, postData);
     const json = await response.json();
     const accessToken = json.accessToken;
+    const username = json.name;
     localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("username", username);
     if (json.message === "Invalid email or password") {
       displayError();
     } else {
@@ -32,7 +34,10 @@ async function logIn(url, data) {
 }
 
 function displayError() {
-  loginFeedback.innerHTML = `<p class="text-danger text-center">Invalid email or password. Please try again.</p>`;
+  const loginErrorMessage = document.createElement("p");
+  loginErrorMessage.textContent = "Invalid email or password. Please try again.";
+  loginErrorMessage.classList.add("text-center", "text-danger");
+  loginFeedbackContainer.appendChild(loginErrorMessage);
 }
 
 export function submitLogin() {
