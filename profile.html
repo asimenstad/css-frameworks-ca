@@ -12,8 +12,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script defer src="./src/js/contacts.js"></script>
-    <script defer src="./src/js/add-contacts.js"></script>
+    <script type="module" src="js/main.mjs"></script>
   </head>
   <body>
     <header>
@@ -63,35 +62,25 @@
         </div>
       </nav>
     </header>
-    <main class="py-4">
+    <main class="py-4 vh-100">
       <div class="container row mx-auto p-0 max-width">
-        <div class="container col-md-3 d-flex flex-column gap-3 mb-3">
+        <div class="container col-md-4  d-flex flex-column gap-3 mb-3">
           <div class="card border-0">
             <div
-              class="card-body d-flex flex-row-reverse flex-md-column-reverse justify-content-center gap-4 align-items-center text-md-center"
+              class="card-body d-flex flex-row-reverse flex-md-column-reverse justify-content-center gap-4 align-items-center text-md-center" id="profile-info-container"
             >
-              <div>
-                <h2>Name</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <hr>
-                <div class="followers"></div>
-                <div class="following"></div>
-                <button class="btn btn-primary gradient">Follow</button>
-              </div>
-              <img src="./images/profile.jpg" class="img-fluid profile rounded-circle" alt="profile picture" />
             </div>
           </div>
           <div class="card border-0">
-            <div class="card-body">
+            <div class="card-body" id="followers-container">
               <h2 class="mb-3 text-md-center">Followers</h2>
               <div class="container contacts d-flex flex-md-column gap-3 overflow-auto"></div>
             </div>
           </div>
         </div>
-        <div class="container col-md-9 d-flex flex-column gap-3">
+        <div class="container col-md-8  d-flex flex-column gap-3">
           <div class="card border-0 bg-white">
             <div class="card-body">
-              <h2>Post on Anna's wall</h2>
               <form>
                 <label for="text-area" class="form-label visually-hidden">Write something</label>
                 <textarea
@@ -138,80 +127,13 @@
               </form>
             </div>
           </div>
-         <select name="sort" id="sort-by" class="form-select bg-white text-primary btn-sort border-0 ms-auto " aria-label="Sort posts by">
+         <select name="sort" id="sort-by" class="form-select bg-white text-primary btn-sort border-0 ms-auto" aria-label="Sort posts by">
             <option selected>Sort by</option>
             <option value="newest">Newest</option>
             <option value="oldest">Oldest</option>
           </select>
-          <div class="card border-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-auto">
-                  <img
-                    src="./images/petter.jpg"
-                    alt="Petter profile picture"
-                    class="img-fluid thumbnail rounded-circle"
-                  />
-                </div>
-                <div class="col-auto">
-                  <h3 class="m-0 mt-1">Petter</h3>
-                  <p class="text-muted">5 minutes ago</p>
-                </div>
-              </div>
-              <div class="row">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, fuga libero laboriosam
-                  exercitationem nesciunt nemo asperiores voluptates! Praesentium, sunt minima ratione quaerat totam id
-                  suscipit recusandae incidunt velit vel fuga?
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-auto">
-                  <img
-                    src="./images/cecil.jpg"
-                    alt="Cecil profile picture"
-                    class="img-fluid thumbnail rounded-circle"
-                  />
-                </div>
-                <div class="col-auto">
-                  <h3 class="m-0 mt-1">Cecil</h3>
-                  <p class="text-muted">7 minutes ago</p>
-                </div>
-              </div>
-              <div >
-                <p>
-                  Lorem ipsum dolor sit amet &#128525
-                </p> <img src="./images/post.jpg" alt="Cat" class="img-fluid rounded">
-              </div>
-            </div>
-          </div>
-          <div class="card border-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-auto">
-                  <img
-                    src="./images/hans.jpg"
-                    alt="Hans profile picture"
-                    class="img-fluid thumbnail rounded-circle"
-                  />
-                </div>
-                <div class="col-auto">
-                  <h3 class="m-0 mt-1">Hans</h3>
-                  <p>11 minutes ago</p>
-                </div>
-              </div>
-              <div >
-                <p>
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quis illo quo nostrum omnis expedita quaerat non, sint sequi natus eaque excepturi nobis, accusantium doloremque aut repellendus? Et, aut nemo! &#127789
-                </p> 
-              </div>
-            </div>
-          </div>
-        </div>
+         <div id="posts-container">
+         </div>
       </div>
     </main>
     <footer class="bg-white p-3 "><div class="container d-flex justify-content-center">
@@ -228,6 +150,7 @@
             />
           </svg>
        <p class="m-0">&copy; 2022 Company name</p></div>
-    </div></footer>
+    </div>
+  </footer>
   </body>
 </html>
