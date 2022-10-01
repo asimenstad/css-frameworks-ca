@@ -70,7 +70,7 @@
           <div id="form-feedback"></div>
           <form class="d-flex flex-column was-validated" id="sign-up-form">
             <div class="mb-4">
-              <label for="name" class="form-label">Username</label>
+              <label for="name" class="form-label">Username*</label>
               <input
                 type="text"
                 name="name"
@@ -85,7 +85,7 @@
               </div>
             </div>
             <div class="mb-4">
-              <label for="email" class="form-label">Email</label>
+              <label for="email" class="form-label">Email*</label>
               <input
                 type="email"
                 name="email"
@@ -98,7 +98,7 @@
               <div class="text-muted fst-italic fw-light">The email must be a valid noroff.no address.</div>
             </div>
             <div class="mb-4">
-              <label for="password" class="form-label">Password</label>
+              <label for="password" class="form-label">Password*</label>
               <input
                 type="password"
                 name="password"
@@ -109,6 +109,18 @@
                 required
               />
               <div class="text-muted fst-italic fw-light">The password must be at least 8 characters.</div>
+            </div>
+            <div class="mb-4">
+              <label for="password" class="form-label">Profile photo</label>
+              <input
+                type="url"
+                name="avatar"
+                class="form-control border-0 bg-light"
+                id="avatar"
+                aria-describedby="password"
+                minlength="8"
+              />
+              <div class="text-muted fst-italic fw-light">Https://example.com</div>
             </div>
             <button type="submit" class="btn btn-primary align-self-center gradient">Sign up</button>
           </form>

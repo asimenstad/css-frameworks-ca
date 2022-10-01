@@ -1,9 +1,10 @@
-import { BASE_URL } from "./main.mjs";
+import { BASE_URL } from "../main.mjs";
 
 export const signUpForm = document.getElementById("sign-up-form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
+const avatar = document.getElementById("avatar");
 const feedbackContainer = document.getElementById("form-feedback");
 
 async function signUp(url, data) {
@@ -54,6 +55,7 @@ export function submitSignUp() {
       name: username.value,
       email: email.value,
       password: password.value,
+      avatar: avatar.value,
     };
     signUp(`${BASE_URL}/api/v1/social/auth/register`, userSignUp);
   });
