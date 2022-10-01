@@ -1,4 +1,4 @@
-import { BASE_URL } from "./main.mjs";
+import { BASE_URL } from "../main.mjs";
 
 export const loginForm = document.getElementById("login-form");
 const loginEmail = document.getElementById("login-email");
