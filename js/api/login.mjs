@@ -1,6 +1,6 @@
 import { BASE_URL } from "../main.mjs";
 
-export const loginForm = document.getElementById("login-form");
+const loginForm = document.getElementById("login-form");
 const loginEmail = document.getElementById("login-email");
 const loginPassword = document.getElementById("login-password");
 const loginFeedbackContainer = document.getElementById("login-feedback");
@@ -18,8 +18,11 @@ async function logIn(url, data) {
     const json = await response.json();
     const accessToken = json.accessToken;
     const username = json.name;
+    const avatar = json.avatar;
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("username", username);
+    localStorage.setItem("avatar", avatar);
+
     if (json.message === "Invalid email or password") {
       displayError();
     } else {

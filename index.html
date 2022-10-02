@@ -63,9 +63,9 @@
       </nav>
     </header>
     <main class="py-4">
-      <div class="container row p-0 mx-auto ">
-        <div class="container col-md-3  d-flex flex-column gap-3 mb-3">
-          <div >
+      <div class="container row p-0 mx-auto">
+        <div class="container col-md-3 d-flex flex-column gap-3 mb-3">
+          <div>
             <form class="d-flex me-auto" role="search">
               <div class="input-group">
                 <input class="form-control border-0 bg-white" type="search" placeholder="Search" aria-label="Search" />
@@ -93,129 +93,85 @@
             </div>
           </div>
         </div>
-        <div class="container col-md-9  d-flex flex-column gap-3">
+        <div class="container col-md-9 d-flex flex-column gap-3">
           <div class="card border-0 bg-white">
             <div class="card-body">
               <h2>Create new post</h2>
-              <form>
+              <form class="was-validated" id="create-post-form">
                 <div class="mb-2">
-                <label for="title" class="form-label visually-hidden">Title</label>
-                  <input type="text" class="form-control border-0 bg-light" id="title" name="title" placeholder="Title">
+                  <label for="title" class="form-label visually-hidden">Title (required)</label>
+                  <input
+                    type="text"
+                    class="form-control border-0 bg-light"
+                    id="title"
+                    name="title"
+                    placeholder="Title (required)"
+                    required
+                  />
                 </div>
                 <div class="mb-2">
-                <label for="post-body" class="form-label visually-hidden">Write something</label>
-                <textarea
-                  class="form-control border-0 bg-light"
-                  id="post-body"
-                  name="post-body"
-                  rows="4"
-                  placeholder="Hello..."
-                ></textarea>
-              </div>
-              <div class="mb-2">
-                <label for="post-body" class="form-label visually-hidden">Tags</label>
-                <input type="text" class="form-control border-0 bg-light" id="tags" name="tags" placeholder="Tags">
-              </div>
-              <div class="mb-2">
-                <label for="post-body" class="form-label visually-hidden">Media</label>
-                <input type="url" class="form-control border-0 bg-light" id="media" name="media" placeholder="Https://">
-              </div>
-                <div class="d-flex  mt-3">
+                  <label for="post-body" class="form-label visually-hidden">Write something (required)</label>
+                  <textarea
+                    class="form-control border-0 bg-light"
+                    id="post-body"
+                    name="post-body"
+                    rows="4"
+                    placeholder="Body (required)"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-2">
+                  <label for="media" class="form-label visually-hidden">Media</label>
+                  <input
+                    type="url"
+                    class="form-control border-0 bg-light"
+                    id="media"
+                    name="media"
+                    placeholder="Image (URL)"
+                  />
+                </div>
+                <div class="mb-2">
+                  <label for="tags" class="form-label visually-hidden">Tags</label>
+                  <input type="text" class="form-control border-0 bg-light" id="tags" name="tags" placeholder="Tags" />
+                </div>
+                <div class="d-flex mt-3">
                   <button type="submit" class="btn btn-primary ms-auto gradient">Post</button>
                 </div>
               </form>
             </div>
           </div>
-          <select name="sort" id="sort-by" class="form-select bg-white text-primary btn-sort border-0 ms-auto " aria-label="Sort posts by">
+          <select
+            name="sort"
+            id="sort-by"
+            class="form-select bg-white text-primary btn-sort border-0 ms-auto"
+            aria-label="Sort posts by"
+          >
             <option selected>Sort by</option>
             <option value="newest">Newest</option>
             <option value="oldest">Oldest</option>
           </select>
-          <div class="card border-0 ">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-auto">
-                  <img
-                    src="./images/petter.jpg"
-                    alt="Petter profile picture"
-                    class="img-fluid thumbnail rounded-circle"
-                  />
-                </div>
-                <div class="col-auto">
-                  <h3 class="m-0 mt-1">Petter</h3>
-                  <p>5 minutes ago</p>
-                </div>
-              </div>
-              <div class="row">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, fuga libero laboriosam
-                  exercitationem nesciunt nemo asperiores voluptates! Praesentium, sunt minima ratione quaerat totam id
-                  suscipit recusandae incidunt velit vel fuga?
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 ">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-auto">
-                  <img
-                    src="./images/cecil.jpg"
-                    alt="Cecil profile picture"
-                    class="img-fluid thumbnail rounded-circle"
-                  />
-                </div>
-                <div class="col-auto">
-                  <h3 class="m-0 mt-1">Cecil</h3>
-                  <p>7 minutes ago</p>
-                </div>
-              </div>
-              <div >
-                <p>
-                  Lorem ipsum dolor sit amet &#128525
-                </p> <img src="./images/post.jpg" alt="Cat" class="img-fluid rounded">
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 ">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-auto">
-                  <img
-                    src="./images/hans.jpg"
-                    alt="Hans profile picture"
-                    class="img-fluid thumbnail rounded-circle"
-                  />
-                </div>
-                <div class="col-auto">
-                  <h3 class="m-0 mt-1">Hans</h3>
-                  <p>11 minutes ago</p>
-                </div>
-              </div>
-              <div >
-                <p>
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quis illo quo nostrum omnis expedita quaerat non, sint sequi natus eaque excepturi nobis, accusantium doloremque aut repellendus? Et, aut nemo! &#127789
-                </p> 
-              </div>
-            </div>
-          </div>
+          <div id="post-feed-container"></div>
         </div>
       </div>
     </main>
-    <footer class="bg-white p-3 "><div class="container d-flex justify-content-center">
-      <div class="d-flex gap-2 align-items-center">  <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          fill="currentColor"
-          class="bi bi-flower2 "
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M8 16a4 4 0 0 0 4-4 4 4 0 0 0 0-8 4 4 0 0 0-8 0 4 4 0 1 0 0 8 4 4 0 0 0 4 4zm3-12c0 .073-.01.155-.03.247-.544.241-1.091.638-1.598 1.084A2.987 2.987 0 0 0 8 5c-.494 0-.96.12-1.372.331-.507-.446-1.054-.843-1.597-1.084A1.117 1.117 0 0 1 5 4a3 3 0 0 1 6 0zm-.812 6.052A2.99 2.99 0 0 0 11 8a2.99 2.99 0 0 0-.812-2.052c.215-.18.432-.346.647-.487C11.34 5.131 11.732 5 12 5a3 3 0 1 1 0 6c-.268 0-.66-.13-1.165-.461a6.833 6.833 0 0 1-.647-.487zm-3.56.617a3.001 3.001 0 0 0 2.744 0c.507.446 1.054.842 1.598 1.084.02.091.03.174.03.247a3 3 0 1 1-6 0c0-.073.01-.155.03-.247.544-.242 1.091-.638 1.598-1.084zm-.816-4.721A2.99 2.99 0 0 0 5 8c0 .794.308 1.516.812 2.052a6.83 6.83 0 0 1-.647.487C4.66 10.869 4.268 11 4 11a3 3 0 0 1 0-6c.268 0 .66.13 1.165.461.215.141.432.306.647.487zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-          />
-        </svg>
-     <p class="m-0">&copy; 2022 Company name</p></div>
-  </div></footer>
+    <footer class="bg-white p-3">
+      <div class="container d-flex justify-content-center">
+        <div class="d-flex gap-2 align-items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-flower2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 16a4 4 0 0 0 4-4 4 4 0 0 0 0-8 4 4 0 0 0-8 0 4 4 0 1 0 0 8 4 4 0 0 0 4 4zm3-12c0 .073-.01.155-.03.247-.544.241-1.091.638-1.598 1.084A2.987 2.987 0 0 0 8 5c-.494 0-.96.12-1.372.331-.507-.446-1.054-.843-1.597-1.084A1.117 1.117 0 0 1 5 4a3 3 0 0 1 6 0zm-.812 6.052A2.99 2.99 0 0 0 11 8a2.99 2.99 0 0 0-.812-2.052c.215-.18.432-.346.647-.487C11.34 5.131 11.732 5 12 5a3 3 0 1 1 0 6c-.268 0-.66-.13-1.165-.461a6.833 6.833 0 0 1-.647-.487zm-3.56.617a3.001 3.001 0 0 0 2.744 0c.507.446 1.054.842 1.598 1.084.02.091.03.174.03.247a3 3 0 1 1-6 0c0-.073.01-.155.03-.247.544-.242 1.091-.638 1.598-1.084zm-.816-4.721A2.99 2.99 0 0 0 5 8c0 .794.308 1.516.812 2.052a6.83 6.83 0 0 1-.647.487C4.66 10.869 4.268 11 4 11a3 3 0 0 1 0-6c.268 0 .66.13 1.165.461.215.141.432.306.647.487zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+            />
+          </svg>
+          <p class="m-0">&copy; 2022 Company name</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
