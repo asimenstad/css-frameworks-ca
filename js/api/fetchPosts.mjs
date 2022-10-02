@@ -1,3 +1,5 @@
+import { postTemplate } from "../templates/postTemplate.mjs";
+
 export async function fetchPosts(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
@@ -8,10 +10,17 @@ export async function fetchPosts(url) {
     };
     const response = await fetch(url, options);
     const json = await response.json();
-
+    displayPostFeed(json);
     console.log(json);
     return json;
   } catch (error) {
     console.log(error);
   }
+}
+
+function displayPostFeed(posts) {
+  const postFeedContainer = document.getElementById("post-feed-container");
+  posts.forEach((post) => {
+    postFeedContainer.append(postTemplate(post));
+  });
 }

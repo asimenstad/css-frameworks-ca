@@ -62,7 +62,7 @@
         </div>
       </nav>
     </header>
-    <main class="py-4 vh-100">
+    <main class="py-4">
       <div class="container row mx-auto p-0 max-width">
         <div class="container col-md-4  d-flex flex-column gap-3 mb-3">
           <div class="card border-0" id="profile-info-container">
@@ -80,28 +80,40 @@
               <h2>Create new post</h2>
               <form>
                 <div class="mb-2">
-                <label for="title" class="form-label visually-hidden">Title</label>
-                  <input type="text" class="form-control border-0 bg-light" id="title" name="title" placeholder="Title">
+                  <label for="title" class="form-label visually-hidden">Title (required)</label>
+                  <input
+                    type="text"
+                    class="form-control border-0 bg-light"
+                    id="title"
+                    name="title"
+                    placeholder="Title (required)"
+                  />
                 </div>
                 <div class="mb-2">
-                <label for="post-body" class="form-label visually-hidden">Write something</label>
-                <textarea
-                  class="form-control border-0 bg-light"
-                  id="post-body"
-                  name="post-body"
-                  rows="4"
-                  placeholder="Hello..."
-                ></textarea>
-              </div>
-              <div class="mb-2">
-                <label for="post-body" class="form-label visually-hidden">Tags</label>
-                <input type="text" class="form-control border-0 bg-light" id="tags" name="tags" placeholder="Tags">
-              </div>
-              <div class="mb-2">
-                <label for="post-body" class="form-label visually-hidden">Media</label>
-                <input type="url" class="form-control border-0 bg-light" id="media" name="media" placeholder="Https://">
-              </div>
-                <div class="d-flex  mt-3">
+                  <label for="post-body" class="form-label visually-hidden">Write something (required)</label>
+                  <textarea
+                    class="form-control border-0 bg-light"
+                    id="post-body"
+                    name="post-body"
+                    rows="4"
+                    placeholder="Body (required)"
+                  ></textarea>
+                </div>
+                <div class="mb-2">
+                  <label for="post-body" class="form-label visually-hidden">Media</label>
+                  <input
+                    type="url"
+                    class="form-control border-0 bg-light"
+                    id="media"
+                    name="media"
+                    placeholder="Image (URL)"
+                  />
+                </div>
+                <div class="mb-2">
+                  <label for="post-body" class="form-label visually-hidden">Tags</label>
+                  <input type="text" class="form-control border-0 bg-light" id="tags" name="tags" placeholder="Tags" />
+                </div>
+                <div class="d-flex mt-3">
                   <button type="submit" class="btn btn-primary ms-auto gradient">Post</button>
                 </div>
               </form>

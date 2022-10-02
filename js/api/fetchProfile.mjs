@@ -1,5 +1,5 @@
-import { postTemplate } from "../templates/postTemplate.mjs";
 import { profileTemplate } from "../templates/profileTemplate.mjs";
+import { profilePostTemplate } from "../templates/profilePostTemplate.mjs";
 
 export const username = localStorage.getItem("username");
 
@@ -33,6 +33,6 @@ function displayPosts(profile) {
   const posts = profile.posts;
   posts.forEach((post) => {
     console.log(post);
-    postsContainer.append(postTemplate(post));
+    postsContainer.append(profilePostTemplate(post));
   });
 }

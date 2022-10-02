@@ -1,6 +1,6 @@
 import { BASE_URL } from "../main.mjs";
 
-export const signUpForm = document.getElementById("sign-up-form");
+const signUpForm = document.getElementById("sign-up-form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");

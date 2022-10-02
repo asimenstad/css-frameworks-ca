@@ -1,4 +1,6 @@
 export function profileTemplate(data) {
+  const { name, _count, avatar } = data;
+
   const profileCard = document.createElement("div");
   const infoContainer = document.createElement("div");
   const username = document.createElement("h2");
@@ -24,12 +26,17 @@ export function profileTemplate(data) {
   profileImage.classList.add("img-fluid", "rounded-circle", "profile");
   counterContainer.classList.add("text-muted", "fs-7", "d-flex");
 
-  username.textContent = data.name;
-  followerCounter.textContent = `${data._count.followers} Followers`;
-  followingCounter.textContent = `${data._count.following} Following`;
-  postCounter.textContent = `${data._count.posts} Posts`;
-  profileImage.src = data.avatar;
-  profileImage.alt = data.name;
+  username.textContent = name;
+  followerCounter.textContent = `${_count.followers} Followers`;
+  followingCounter.textContent = `${_count.following} Following`;
+  postCounter.textContent = `${_count.posts} Posts`;
+
+  if (avatar !== "") {
+    profileImage.src = avatar;
+  } else {
+    profileImage.src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+  }
+  profileImage.alt = name;
 
   counterContainer.append(followerCounter, followingCounter, postCounter);
 
