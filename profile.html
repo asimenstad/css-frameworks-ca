@@ -73,7 +73,7 @@
           <div class="card border-0 bg-white">
             <div class="card-body">
               <h2>Create new post</h2>
-              <form>
+              <form class="was-validated" id="create-post-form">
                 <div class="mb-2">
                   <label for="title" class="form-label visually-hidden">Title (required)</label>
                   <input
@@ -82,6 +82,7 @@
                     id="title"
                     name="title"
                     placeholder="Title (required)"
+                    required
                   />
                 </div>
                 <div class="mb-2">
@@ -92,10 +93,11 @@
                     name="post-body"
                     rows="4"
                     placeholder="Body (required)"
+                    required
                   ></textarea>
                 </div>
                 <div class="mb-2">
-                  <label for="post-body" class="form-label visually-hidden">Media</label>
+                  <label for="media" class="form-label visually-hidden">Media</label>
                   <input
                     type="url"
                     class="form-control border-0 bg-light"
@@ -105,7 +107,7 @@
                   />
                 </div>
                 <div class="mb-2">
-                  <label for="post-body" class="form-label visually-hidden">Tags</label>
+                  <label for="tags" class="form-label visually-hidden">Tags</label>
                   <input type="text" class="form-control border-0 bg-light" id="tags" name="tags" placeholder="Tags" />
                 </div>
                 <div class="d-flex mt-3">
@@ -171,7 +173,7 @@
             <option value="newest">Newest</option>
             <option value="oldest">Oldest</option>
           </select>
-         <div id="posts-container">
+         <div class="d-flex flex-column-reverse" id="posts-container">
          </div>
       </div>
     </main>

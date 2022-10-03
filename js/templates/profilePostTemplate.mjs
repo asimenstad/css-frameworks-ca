@@ -18,7 +18,7 @@ export function profilePostTemplate(data) {
 </button>
 <ul class="dropdown-menu">
 <li><button class="dropdown-item edit-post-btn" id="${id}" data-bs-toggle="modal" data-bs-target="#modal" >Edit post</button></li>
-<li><Button class="dropdown-item text-danger">Delete post</button></li>
+<li><Button class="dropdown-item delete-post-btn text-danger" id="${id}">Delete post</button></li>
 </ul>`;
 
   /// header classes

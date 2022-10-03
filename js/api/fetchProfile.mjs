@@ -1,6 +1,8 @@
 import { profileTemplate } from "../templates/profileTemplate.mjs";
 import { profilePostTemplate } from "../templates/profilePostTemplate.mjs";
 import { postId } from "./updatePost.mjs";
+import { deletePost } from "./deletePost.mjs";
+import { BASE_URL } from "../main.mjs";
 
 export const username = localStorage.getItem("username");
 
@@ -33,19 +35,25 @@ function displayPosts(profile) {
   const postsContainer = document.getElementById("posts-container");
   const posts = profile.posts;
   posts.forEach((post) => {
-    console.log(post);
     postsContainer.append(profilePostTemplate(post));
+    console.log(post);
   });
-  editPostId();
+  getPostId();
 }
 
-function editPostId() {
+function getPostId() {
   const editBtns = document.querySelectorAll(".edit-post-btn");
-  console.log(editBtns);
   editBtns.forEach((editBtn) => {
     editBtn.addEventListener("click", (e) => {
       postId.value = editBtn.id;
-      console.log(postId.value);
+    });
+  });
+
+  const deleteBtns = document.querySelectorAll(".delete-post-btn");
+  deleteBtns.forEach((deleteBtn) => {
+    deleteBtn.addEventListener("click", (e) => {
+      console.log(deleteBtn.id);
+      deletePost(`${BASE_URL}/api/v1/social/posts/${deleteBtn.id}`);
     });
   });
 }
