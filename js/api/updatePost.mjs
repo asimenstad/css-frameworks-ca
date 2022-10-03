@@ -37,6 +37,7 @@ export function submitUpdatedPost() {
       media: newMedia.value,
       tags: newTags.value,
     };
+
     if (!updatedPost.media) {
       delete updatedPost.media;
     }

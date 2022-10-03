@@ -15,8 +15,8 @@ if (path === "/signup.html") {
   submitLogin();
 } else if (path === "/profile.html") {
   fetchProfile(`${BASE_URL}/api/v1/social/profiles/${username}?_posts=true&_following=true&_followers=true`);
+  submitPost();
   submitUpdatedPost();
 } else if (path === "/index.html") {
   fetchPosts(`${BASE_URL}/api/v1/social/posts?_author=true&_comments=true&_reactions=true`);
-  submitPost();
 }

@@ -21,8 +21,8 @@ async function createPost(url, data) {
     const response = await fetch(url, postData);
     const json = await response.json();
 
-    console.log(json);
-
+    createPostForm.reset();
+    window.location.reload();
     return json;
   } catch (error) {
     console.log(error);
