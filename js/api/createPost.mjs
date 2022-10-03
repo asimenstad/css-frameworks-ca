@@ -9,7 +9,6 @@ const tags = document.getElementById("tags");
 async function createPost(url, data) {
   try {
     const accessToken = localStorage.getItem("accessToken");
-
     const postData = {
       method: "POST",
       headers: {
@@ -39,6 +38,9 @@ export function submitPost() {
       media: media.value,
       tags: tags.value,
     };
+    if (!post.media) {
+      delete post.media;
+    }
     createPost(`${BASE_URL}/api/v1/social/posts`, post);
   });
 }
