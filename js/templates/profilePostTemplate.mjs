@@ -1,7 +1,7 @@
 export function profilePostTemplate(data) {
   const { id, owner, created, title, body, media, tags } = data;
 
-  /// Header
+  /// Header elements
   const header = document.createElement("div");
   const headerText = document.createElement("div");
   const authorContainer = document.createElement("h3");
@@ -9,17 +9,19 @@ export function profilePostTemplate(data) {
   const avatarContainer = document.createElement("div");
   const avatar = document.createElement("img");
 
+  /// Dropdown
   const dropdown = document.createElement("div");
   dropdown.innerHTML = ` <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
   <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
 </svg>
 </button>
 <ul class="dropdown-menu">
-<li><a class="dropdown-item" href="#">Edit post</a></li>
-<li><Button class="dropdown-item">Delete post</button></li>
+<li><button class="dropdown-item edit-post-btn" id="${id}" data-bs-toggle="modal" data-bs-target="#modal" >Edit post</button></li>
+<li><Button class="dropdown-item text-danger">Delete post</button></li>
 </ul>`;
 
+  /// header classes
   header.classList.add("row");
   headerText.classList.add("col-auto");
   authorContainer.classList.add("m-0", "mt-1");
