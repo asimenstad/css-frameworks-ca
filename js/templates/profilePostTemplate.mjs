@@ -1,5 +1,5 @@
 export function profilePostTemplate(data) {
-  const { id, owner, created, title, body, media, tags } = data;
+  const { id, owner, created, title, body, media, tags, updated } = data;
 
   /// Header elements
   const header = document.createElement("div");
@@ -34,10 +34,17 @@ export function profilePostTemplate(data) {
   const joinedCreated = splitCreated.join(` at `);
   const formattedCreated = joinedCreated.slice(0, -8);
 
-  const avatarStored = localStorage.getItem("avatar");
+  const splitUpdated = updated.split("T");
+  const joinedUpdated = splitUpdated.join(` at `);
+  const formattedUpdated = joinedUpdated.slice(0, -8);
 
   authorContainer.textContent = owner;
   timeContainer.textContent = formattedCreated;
+  if (created !== updated) {
+    timeContainer.textContent = `${formattedUpdated} (Edited)`;
+  }
+
+  const avatarStored = localStorage.getItem("avatar");
   if (avatarStored !== "") {
     avatar.src = avatarStored;
   } else {
