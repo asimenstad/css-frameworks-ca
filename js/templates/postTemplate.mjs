@@ -1,5 +1,5 @@
 export function postTemplate(data) {
-  const { author, body, comments, created, media, reactions, tags, title } = data;
+  const { author, body, comments, created, media, reactions, tags, title, updated } = data;
 
   /// Header
   const header = document.createElement("div");
@@ -20,8 +20,18 @@ export function postTemplate(data) {
   const joinedCreated = splitCreated.join(` at `);
   const formattedCreated = joinedCreated.slice(0, -8);
 
+  const splitUpdated = updated.split("T");
+  const joinedUpdated = splitUpdated.join(` at `);
+  const formattedUpdated = joinedUpdated.slice(0, -8);
+
   authorContainer.textContent = author.name;
+
   timeContainer.textContent = formattedCreated;
+
+  if (created !== updated) {
+    timeContainer.textContent = `${formattedUpdated} (Edited)`;
+  }
+
   if (author.avatar !== "") {
     avatar.src = data.author.avatar;
   } else {
