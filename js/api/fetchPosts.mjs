@@ -1,5 +1,6 @@
 import { postTemplate } from "../templates/postTemplate.mjs";
 import { searchPosts } from "./search.mjs";
+import { sortPosts } from "./sort.mjs";
 
 export async function fetchPosts(url) {
   try {
@@ -13,6 +14,7 @@ export async function fetchPosts(url) {
     const json = await response.json();
     displayPostFeed(json);
     searchPosts(json);
+    sortPosts(json);
     console.log(json);
     return json;
   } catch (error) {
