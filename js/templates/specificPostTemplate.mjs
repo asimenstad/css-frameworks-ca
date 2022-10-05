@@ -1,4 +1,4 @@
-export function postTemplate(data) {
+export function specificPostTemplate(data) {
   const { author, body, comments, created, media, reactions, tags, title, updated, id } = data;
 
   /// Header
@@ -45,7 +45,7 @@ export function postTemplate(data) {
   const tagsContainer = document.createElement("p");
 
   content.classList.add("row");
-  tagsContainer.classList.add("text-muted", "mt-1");
+  tagsContainer.classList.add("text-muted", "mt-1", "border-bottom");
 
   titleContainer.textContent = title;
   bodyContainer.textContent = body;
@@ -53,6 +53,36 @@ export function postTemplate(data) {
   tagsContainer.textContent = tags;
 
   content.append(titleContainer, bodyContainer, mediaContainer, tagsContainer);
+
+  /// Footer - comments + reactions
+
+  const commentsContainer = document.createElement("div");
+  const commentCard = document.createElement("div");
+  const commentsTitle = document.createElement("h3");
+  const commentHeader = document.createElement("div");
+  const commentAuthor = document.createElement("p");
+  const commentBody = document.createElement("p");
+  const commentCreated = document.createElement("p");
+
+  commentsTitle.textContent = `Comments (${comments.length})`;
+
+  comments.forEach((comment) => {
+    const { owner, created, body } = comment;
+    const formattedCreated = new Date(created).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
+    commentAuthor.textContent = owner;
+    commentBody.textContent = body;
+    commentCreated.textContent = formattedCreated;
+    console.log(comment);
+  });
+
+  commentHeader.classList.add("d-flex", "gap-2");
+  commentAuthor.classList.add("m-0");
+  commentCreated.classList.add("text-muted", "m-0");
+  commentCard.classList.add("ps-2", "border-start");
+
+  commentHeader.append(commentAuthor, commentCreated);
+  commentCard.append(commentHeader, commentBody);
+  commentsContainer.append(commentsTitle, commentCard);
 
   /// Card
   const cardContainer = document.createElement("a");
@@ -65,7 +95,7 @@ export function postTemplate(data) {
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
 
-  cardBody.append(header, content);
+  cardBody.append(header, content, commentsContainer);
   card.append(cardBody);
   cardContainer.append(card);
 

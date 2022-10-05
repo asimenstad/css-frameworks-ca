@@ -6,6 +6,7 @@ export function sortPosts(posts) {
 
   const sortForm = document.getElementById("sort-form");
   const sort = document.getElementById("sort");
+
   sort.addEventListener("change", () => {
     const postFeedContainer = document.getElementById("post-feed-container");
 
@@ -14,7 +15,7 @@ export function sortPosts(posts) {
     } else if (sort.value === "newest") {
       sortedPosts = postsArray.sort((a, b) => new Date(b.created) - new Date(a.created));
     }
-    console.log(sortedPosts);
+
     postFeedContainer.innerHTML = "";
     sortedPosts.forEach((post) => {
       postFeedContainer.append(postTemplate(post));
