@@ -45,7 +45,7 @@ export function specificPostTemplate(data) {
   const tagsContainer = document.createElement("p");
 
   content.classList.add("row");
-  tagsContainer.classList.add("text-muted", "mt-1", "border-bottom");
+  tagsContainer.classList.add("text-muted", "mt-1");
 
   titleContainer.textContent = title;
   bodyContainer.textContent = body;
@@ -54,35 +54,62 @@ export function specificPostTemplate(data) {
 
   content.append(titleContainer, bodyContainer, mediaContainer, tagsContainer);
 
-  /// Footer - comments + reactions
+  /// Footer - comments
+
+  const commentFormContainer = document.createElement("div");
+  const commentForm = document.createElement("form");
+  commentForm.id = "comment-form";
+
+  commentForm.innerHTML = `<label for="comment-body" class="form-label visually-hidden">Comment</label>
+  <textarea
+  class="form-control border-0 bg-light"
+  id="comment-body"
+  name="comment-body"
+  rows="1"
+  placeholder="Write a comment"
+  required
+></textarea>
+<div class="d-flex mt-1">
+<button type="submit" class="btn btn-primary ms-auto gradient">Post</button>
+</div>`;
+  commentFormContainer.classList.add("mb-1");
+  commentFormContainer.append(commentForm);
 
   const commentsContainer = document.createElement("div");
-  const commentCard = document.createElement("div");
-  const commentsTitle = document.createElement("h3");
-  const commentHeader = document.createElement("div");
-  const commentAuthor = document.createElement("p");
-  const commentBody = document.createElement("p");
-  const commentCreated = document.createElement("p");
-
+  const commentsTitle = document.createElement("p");
+  const commentCardsContainer = document.createElement("div");
   commentsTitle.textContent = `Comments (${comments.length})`;
+  commentsContainer.classList.add("border-top", "pt-3");
+  commentsTitle.classList.add("ms-auto");
 
   comments.forEach((comment) => {
     const { owner, created, body } = comment;
     const formattedCreated = new Date(created).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
+
+    const commentCard = document.createElement("div");
+    const commentHeader = document.createElement("div");
+    const commentAuthor = document.createElement("p");
+    const commentBody = document.createElement("p");
+    const commentCreated = document.createElement("p");
+
+    commentCard.classList.add("ps-2", "border-start");
+    commentHeader.classList.add("d-flex", "gap-2");
+    commentAuthor.classList.add("m-0");
+    commentCreated.classList.add("text-muted", "m-0");
+
     commentAuthor.textContent = owner;
     commentBody.textContent = body;
     commentCreated.textContent = formattedCreated;
-    console.log(comment);
+
+    commentHeader.append(commentAuthor, commentCreated);
+    commentCard.append(commentHeader, commentBody);
+
+    console.log(commentCard);
+
+    commentCardsContainer.append(commentCard);
   });
 
-  commentHeader.classList.add("d-flex", "gap-2");
-  commentAuthor.classList.add("m-0");
-  commentCreated.classList.add("text-muted", "m-0");
-  commentCard.classList.add("ps-2", "border-start");
-
-  commentHeader.append(commentAuthor, commentCreated);
-  commentCard.append(commentHeader, commentBody);
-  commentsContainer.append(commentsTitle, commentCard);
+  commentsContainer.append(commentsTitle, commentFormContainer, commentCardsContainer);
 
   /// Card
   const cardContainer = document.createElement("a");
@@ -90,7 +117,7 @@ export function specificPostTemplate(data) {
   cardContainer.href = `specific-post.html?id=${id}`;
 
   const card = document.createElement("div");
-  card.classList.add("card", "border-0", "mb-4");
+  card.classList.add("card", "border-0", "mb-4", "mx-auto");
 
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
