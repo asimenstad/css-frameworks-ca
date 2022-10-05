@@ -8,8 +8,9 @@ export function searchPosts(posts) {
 
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const search = searchInput.value;
-    console.log(searchInput.value);
+
     const filteredPosts = postsArray.filter((post) => {
       const {
         author: { name },

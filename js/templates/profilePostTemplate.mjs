@@ -30,13 +30,8 @@ export function profilePostTemplate(data) {
   avatar.classList.add("img-fluid", "thumbnail", "rounded-circle");
   dropdown.classList.add("dropdown", "col-auto", "ms-auto");
 
-  const splitCreated = created.split("T");
-  const joinedCreated = splitCreated.join(` at `);
-  const formattedCreated = joinedCreated.slice(0, -8);
-
-  const splitUpdated = updated.split("T");
-  const joinedUpdated = splitUpdated.join(` at `);
-  const formattedUpdated = joinedUpdated.slice(0, -8);
+  const formattedCreated = new Date(created).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
+  const formattedUpdated = new Date(updated).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
 
   authorContainer.textContent = owner;
   timeContainer.textContent = formattedCreated;

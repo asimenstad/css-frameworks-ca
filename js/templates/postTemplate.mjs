@@ -16,13 +16,8 @@ export function postTemplate(data) {
   avatarContainer.classList.add("col-auto");
   avatar.classList.add("img-fluid", "thumbnail", "rounded-circle");
 
-  const splitCreated = created.split("T");
-  const joinedCreated = splitCreated.join(` at `);
-  const formattedCreated = joinedCreated.slice(0, -8);
-
-  const splitUpdated = updated.split("T");
-  const joinedUpdated = splitUpdated.join(` at `);
-  const formattedUpdated = joinedUpdated.slice(0, -8);
+  const formattedCreated = new Date(created).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
+  const formattedUpdated = new Date(updated).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
 
   authorContainer.textContent = author.name;
 
@@ -50,7 +45,7 @@ export function postTemplate(data) {
   const tagsContainer = document.createElement("p");
 
   content.classList.add("row");
-  tagsContainer.classList.add("text-muted");
+  tagsContainer.classList.add("text-muted", "mt-1");
 
   titleContainer.textContent = title;
   bodyContainer.textContent = body;
