@@ -5,6 +5,7 @@ import { fetchPosts } from "./api/fetchPosts.mjs";
 import { submitPost } from "./api/createPost.mjs";
 import { submitUpdatedPost } from "./api/updatePost.mjs";
 import { id, fetchSpecificPost } from "./api/specificPost.mjs";
+import { fetchProfiles } from "./api/follow.mjs";
 
 export const BASE_URL = "https://nf-api.onrender.com";
 
@@ -20,6 +21,7 @@ if (path === "/signup.html") {
   submitUpdatedPost();
 } else if (path === "/index.html") {
   fetchPosts(`${BASE_URL}/api/v1/social/posts?_author=true&_comments=true&_reactions=true`);
+  fetchProfiles(`${BASE_URL}/api/v1/social/profiles`);
 } else if (path === "/specific-post.html") {
   fetchSpecificPost(`${BASE_URL}/api/v1/social/posts/${id}?_author=true&_comments=true&_reactions=true`);
 }
