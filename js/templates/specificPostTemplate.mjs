@@ -1,3 +1,6 @@
+import { commentOnPost } from "../api/comment.mjs";
+import { BASE_URL } from "../main.mjs";
+
 export function specificPostTemplate(data) {
   const { author, body, comments, created, media, reactions, tags, title, updated, id } = data;
 
@@ -111,10 +114,24 @@ export function specificPostTemplate(data) {
 
   commentsContainer.append(commentsTitle, commentFormContainer, commentCardsContainer);
 
+  commentForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const commentInput = document.getElementById("comment-body");
+
+    const commentData = {
+      body: commentInput.value,
+      replyToId: 0,
+    };
+
+    if (commentData.replyToId === 0) {
+      delete commentData.replyToId;
+    }
+
+    console.log(commentInput.value);
+    commentOnPost(`${BASE_URL}/api/v1/social/posts/${data.id}/comment`, commentData);
+  });
+
   /// Card
-  const cardContainer = document.createElement("a");
-  cardContainer.classList.add("text-decoration-none", "text-reset");
-  cardContainer.href = `specific-post.html?id=${id}`;
 
   const card = document.createElement("div");
   card.classList.add("card", "border-0", "mb-4", "mx-auto");
@@ -124,7 +141,6 @@ export function specificPostTemplate(data) {
 
   cardBody.append(header, content, commentsContainer);
   card.append(cardBody);
-  cardContainer.append(card);
 
-  return cardContainer;
+  return card;
 }

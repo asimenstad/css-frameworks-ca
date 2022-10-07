@@ -68,6 +68,7 @@ export function profilePostTemplate(data) {
   content.append(titleContainer, bodyContainer, mediaContainer, tagsContainer);
 
   /// Card
+
   const card = document.createElement("div");
   card.classList.add("card", "border-0", "mb-4");
   card.id = id;
