@@ -54,10 +54,24 @@ export function postTemplate(data) {
 
   content.append(titleContainer, bodyContainer, mediaContainer, tagsContainer);
 
+  /// Comments
+  const footer = document.createElement("div");
+  const commentCounter = document.createElement("a");
+  const reactionsDisplay = document.createElement("div");
+
+  commentCounter.textContent = `Comments (${comments.length})`;
+  commentCounter.href = `specific-post.html?id=${id}`;
+
+  reactions.forEach((reaction) => {
+    reactionsDisplay.textContent = reaction;
+  });
+
+  footer.classList.add("d-flex", "justify-content-between");
+  commentCounter.classList.add("mb-0", "text-decoration-none");
+
+  footer.append(reactionsDisplay, commentCounter);
+
   /// Card
-  const cardContainer = document.createElement("a");
-  cardContainer.classList.add("text-decoration-none", "text-reset");
-  cardContainer.href = `specific-post.html?id=${id}`;
 
   const card = document.createElement("div");
   card.classList.add("card", "border-0", "mb-4");
@@ -65,9 +79,8 @@ export function postTemplate(data) {
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
 
-  cardBody.append(header, content);
+  cardBody.append(header, content, footer);
   card.append(cardBody);
-  cardContainer.append(card);
 
-  return cardContainer;
+  return card;
 }

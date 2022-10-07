@@ -5,7 +5,6 @@ import { fetchPosts } from "./api/fetchPosts.mjs";
 import { submitPost } from "./api/createPost.mjs";
 import { submitUpdatedPost } from "./api/updatePost.mjs";
 import { id, fetchSpecificPost } from "./api/specificPost.mjs";
-import { createComment } from "./api/comment.mjs";
 
 export const BASE_URL = "https://nf-api.onrender.com";
 
@@ -23,5 +22,4 @@ if (path === "/signup.html") {
   fetchPosts(`${BASE_URL}/api/v1/social/posts?_author=true&_comments=true&_reactions=true`);
 } else if (path === "/specific-post.html") {
   fetchSpecificPost(`${BASE_URL}/api/v1/social/posts/${id}?_author=true&_comments=true&_reactions=true`);
-  createComment();
 }
