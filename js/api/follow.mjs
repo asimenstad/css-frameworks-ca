@@ -37,14 +37,7 @@ function displayProfiles(profiles) {
     }
     followBtn.textContent = "Follow";
 
-    profileCard.classList.add(
-      "d-flex",
-      "flex-column",
-      "flex-md-row",
-      "gap-4",
-      "align-items-center",
-      "justify-content-center"
-    );
+    profileCard.classList.add("d-flex", "flex-column", "flex-md-row", "gap-1", "align-items-center");
     profileInfo.classList.add("d-flex", "flex-column", "align-items-center", "align-items-md-start");
     profileAvatar.classList.add("img-fluid", "thumbnail", "rounded-circle");
     followBtn.classList.add("btn", "gradient", "btn-primary");

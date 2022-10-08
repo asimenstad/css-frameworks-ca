@@ -22,8 +22,8 @@ export function profilePostTemplate(data) {
 </ul>`;
 
   /// header classes
-  header.classList.add("row");
-  headerText.classList.add("col-auto");
+  header.classList.add("row", "no-wrap");
+  headerText.classList.add("col-auto", "w-50");
   authorContainer.classList.add("m-0", "mt-1");
   timeContainer.classList.add("text-muted");
   avatarContainer.classList.add("col-auto");

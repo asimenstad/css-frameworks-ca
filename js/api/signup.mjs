@@ -24,7 +24,7 @@ async function signUp(url, data) {
     if ((json.statusCode === 400) | (json.statusCode === 500)) {
       displayError();
     } else {
-      displaySuccess();
+      window.location.href = "login.html";
     }
     signUpForm.reset();
     return json;
@@ -41,13 +41,6 @@ function displayError() {
   feedbackContainer.appendChild(errorMessage);
 }
 
-function displaySuccess() {
-  const successMessage = document.createElement("p");
-  successMessage.textContent = "Success! Your account was created.";
-  successMessage.classList.add("text-center", "text-success");
-  feedbackContainer.appendChild(successMessage);
-}
-
 export function submitSignUp() {
   signUpForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -57,6 +50,9 @@ export function submitSignUp() {
       password: password.value,
       avatar: avatar.value,
     };
+    if (userSignUp.avatar === "") {
+      delete userSignUp.avatar;
+    }
     signUp(`${BASE_URL}/api/v1/social/auth/register`, userSignUp);
   });
 }
