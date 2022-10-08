@@ -107,8 +107,6 @@ export function specificPostTemplate(data) {
     commentHeader.append(commentAuthor, commentCreated);
     commentCard.append(commentHeader, commentBody);
 
-    console.log(commentCard);
-
     commentCardsContainer.append(commentCard);
   });
 

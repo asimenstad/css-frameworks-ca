@@ -9,7 +9,6 @@ export const username = localStorage.getItem("username");
 export async function fetchProfile(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
-    console.log(accessToken);
     const options = {
       headers: {
         Authorization: `Bearer ${accessToken}`,
