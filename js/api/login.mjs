@@ -3,7 +3,7 @@ import { BASE_URL } from "../main.mjs";
 const loginForm = document.getElementById("login-form");
 const loginEmail = document.getElementById("login-email");
 const loginPassword = document.getElementById("login-password");
-const loginFeedbackContainer = document.getElementById("login-feedback");
+const errorMessage = document.getElementById("login-feedback");
 
 async function logIn(url, data) {
   try {
@@ -37,10 +37,7 @@ async function logIn(url, data) {
 }
 
 function displayError() {
-  const loginErrorMessage = document.createElement("p");
-  loginErrorMessage.textContent = "Invalid email or password. Please try again.";
-  loginErrorMessage.classList.add("text-center", "text-danger");
-  loginFeedbackContainer.appendChild(loginErrorMessage);
+  errorMessage.innerHTML = `<p class="text-danger text-center">Invalid email or password. Please try again.</p>`;
 }
 
 export function submitLogin() {
