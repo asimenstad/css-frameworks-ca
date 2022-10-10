@@ -39,7 +39,7 @@ function displayProfiles(profiles) {
 
     profileCard.classList.add("d-flex", "flex-column", "flex-md-row", "gap-1", "align-items-center");
     profileInfo.classList.add("d-flex", "flex-column", "align-items-center", "align-items-md-start");
-    profileAvatar.classList.add("img-fluid", "thumbnail", "rounded-circle");
+    profileAvatar.classList.add("img-fluid", "thumbnail", "rounded-circle", "flex-fill");
     followBtn.classList.add("btn", "gradient", "btn-primary");
 
     profileInfo.append(profileName, followBtn);
