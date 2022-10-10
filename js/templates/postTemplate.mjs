@@ -62,10 +62,6 @@ export function postTemplate(data) {
   commentCounter.textContent = `Comments (${comments.length})`;
   commentCounter.href = `specific-post.html?id=${id}`;
 
-  reactions.forEach((reaction) => {
-    reactionsDisplay.textContent = reaction;
-  });
-
   footer.classList.add("d-flex", "justify-content-between");
   commentCounter.classList.add("mb-0", "text-decoration-none");
 

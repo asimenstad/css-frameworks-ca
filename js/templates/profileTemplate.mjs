@@ -13,11 +13,14 @@ export function profileTemplate(data) {
   profileCard.classList.add(
     "card-body",
     "d-flex",
-    "flex-row-reverse",
+    "flex-column-reverse",
+    "flex-sm-row-reverse",
     "flex-md-column-reverse",
     "justify-content-center",
     "gap-4",
     "align-items-center",
+    "text-center",
+    "text-sm-start",
     "text-md-center"
   );
   followerCounter.classList.add("px-1");

@@ -38,6 +38,10 @@
   transition: 0.2s ease-in-out;
 }
 
+.form-select {
+  min-width: 110px;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

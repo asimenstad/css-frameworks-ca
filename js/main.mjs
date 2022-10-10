@@ -10,8 +10,6 @@ import { fetchProfiles } from "./api/follow.mjs";
 export const BASE_URL = "https://nf-api.onrender.com";
 export const path = location.pathname;
 
-const savedAccessToken = localStorage.getItem("accessToken");
-
 if (path === "/signup.html") {
   submitSignUp();
 } else if (path === "/login.html") {
@@ -21,9 +19,6 @@ if (path === "/signup.html") {
   submitPost();
   submitUpdatedPost();
 } else if (path === "/index.html") {
-  if (savedAccessToken === "") {
-    window.location.href === "/login.html";
-  }
   fetchPosts(`${BASE_URL}/api/v1/social/posts?_author=true&_comments=true&_reactions=true`);
   fetchProfiles(`${BASE_URL}/api/v1/social/profiles`);
 } else if (path === "/specific-post.html") {
