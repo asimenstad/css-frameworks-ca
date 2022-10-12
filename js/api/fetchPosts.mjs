@@ -2,6 +2,12 @@ import { postTemplate } from "../templates/postTemplate.mjs";
 import { searchPosts } from "./search.mjs";
 import { sortPosts } from "./sort.mjs";
 
+/**
+ * Fetches all posts from the API
+ * @param {string} url - The URL for the GET request
+ * @returns {array} - All posts
+ */
+
 export async function fetchPosts(url) {
   try {
     const accessToken = localStorage.getItem("accessToken");
@@ -15,7 +21,6 @@ export async function fetchPosts(url) {
     displayPostFeed(json);
     searchPosts(json);
     sortPosts(json);
-    console.log(json);
     return json;
   } catch (error) {
     console.log(error);

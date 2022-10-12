@@ -14,7 +14,6 @@ export async function deletePost(url) {
     const json = await response.json();
 
     window.location.reload();
-    console.log(json);
   } catch (error) {
     console.log(error);
   }

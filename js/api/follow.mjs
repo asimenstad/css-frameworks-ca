@@ -9,7 +9,6 @@ export async function fetchProfiles(url) {
     const response = await fetch(url, options);
     const json = await response.json();
 
-    console.log(json);
     displayProfiles(json);
     return json;
   } catch (error) {
@@ -38,8 +37,9 @@ function displayProfiles(profiles) {
     followBtn.textContent = "Follow";
 
     profileCard.classList.add("d-flex", "flex-column", "flex-md-row", "gap-1", "align-items-center");
-    profileInfo.classList.add("d-flex", "flex-column", "align-items-center", "align-items-md-start");
-    profileAvatar.classList.add("img-fluid", "thumbnail", "rounded-circle", "flex-fill");
+    profileInfo.classList.add("d-flex", "flex-column", "align-items-center", "align-items-md-start", "text-wrap");
+    profileName.classList.add("text-wrap");
+    profileAvatar.classList.add("img-fluid", "thumbnail", "rounded-circle");
     followBtn.classList.add("btn", "gradient", "btn-primary");
 
     profileInfo.append(profileName, followBtn);

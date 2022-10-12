@@ -14,7 +14,6 @@ export async function commentOnPost(url, data) {
     const response = await fetch(url, postData);
     const json = await response.json();
     window.location.reload();
-    console.log(json);
   } catch (error) {
     console.log(error);
   }

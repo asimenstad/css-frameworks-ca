@@ -7,6 +7,13 @@ const password = document.getElementById("password");
 const avatar = document.getElementById("avatar");
 const feedbackContainer = document.getElementById("form-feedback");
 
+/**
+ * Registers new user account
+ * @param {string} url - The URL for the POST request
+ * @param {object} data - The user data from the sign up form
+ * @returns {object} - User account information
+ */
+
 async function signUp(url, data) {
   try {
     const postData = {
@@ -19,8 +26,7 @@ async function signUp(url, data) {
 
     const response = await fetch(url, postData);
     const json = await response.json();
-    console.log(json);
-    console.log(json.statusCode);
+
     if ((json.statusCode === 400) | (json.statusCode === 500)) {
       displayError();
     } else {
@@ -35,10 +41,7 @@ async function signUp(url, data) {
 }
 
 function displayError() {
-  const errorMessage = document.createElement("p");
-  errorMessage.textContent = "Sorry! An error occurred. Please try again.";
-  errorMessage.classList.add("text-center", "text-danger");
-  feedbackContainer.appendChild(errorMessage);
+  feedbackContainer.innerHTML = `<p class="text-danger text-center">Sorry! An error occurred. Please try again.</p>`;
 }
 
 export function submitSignUp() {

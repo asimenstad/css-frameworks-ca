@@ -3,6 +3,7 @@ export function postTemplate(data) {
 
   /// Header
   const header = document.createElement("div");
+  const specificPostLink = document.createElement("a");
   const headerText = document.createElement("div");
   const authorContainer = document.createElement("h3");
   const timeContainer = document.createElement("p");
@@ -10,7 +11,7 @@ export function postTemplate(data) {
   const avatar = document.createElement("img");
 
   header.classList.add("row");
-  headerText.classList.add("col-auto");
+  specificPostLink.classList.add("col-auto", "text-decoration-none");
   authorContainer.classList.add("m-0", "mt-1");
   timeContainer.classList.add("text-muted");
   avatarContainer.classList.add("col-auto");
@@ -19,8 +20,8 @@ export function postTemplate(data) {
   const formattedCreated = new Date(created).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
   const formattedUpdated = new Date(updated).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
 
+  specificPostLink.href = `specific-post.html?id=${id}`;
   authorContainer.textContent = author.name;
-
   timeContainer.textContent = formattedCreated;
 
   if (created !== updated) {
@@ -35,7 +36,8 @@ export function postTemplate(data) {
 
   avatarContainer.append(avatar);
   headerText.append(authorContainer, timeContainer);
-  header.append(avatarContainer, headerText);
+  specificPostLink.append(headerText);
+  header.append(avatarContainer, specificPostLink);
 
   /// Body
   const content = document.createElement("div");
@@ -68,7 +70,6 @@ export function postTemplate(data) {
   footer.append(reactionsDisplay, commentCounter);
 
   /// Card
-
   const card = document.createElement("div");
   card.classList.add("card", "border-0", "mb-4");
 

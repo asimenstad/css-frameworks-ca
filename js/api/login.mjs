@@ -5,6 +5,13 @@ const loginEmail = document.getElementById("login-email");
 const loginPassword = document.getElementById("login-password");
 const errorMessage = document.getElementById("login-feedback");
 
+/**
+ * Logs in user
+ * @param {string} url - The URL for the POST request
+ * @param {object} data - The login information from the login form
+ * @returns {object} - User account information and access token
+ */
+
 async function logIn(url, data) {
   try {
     const postData = {

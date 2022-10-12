@@ -35,7 +35,6 @@ function displayPosts(profile) {
   const posts = profile.posts;
   posts.forEach((post) => {
     postsContainer.append(profilePostTemplate(post));
-    console.log(post);
   });
   getPostId();
 }
@@ -51,7 +50,6 @@ function getPostId() {
   const deleteBtns = document.querySelectorAll(".delete-post-btn");
   deleteBtns.forEach((deleteBtn) => {
     deleteBtn.addEventListener("click", (e) => {
-      console.log(deleteBtn.id);
       deletePost(`${BASE_URL}/api/v1/social/posts/${deleteBtn.id}`);
     });
   });

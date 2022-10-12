@@ -6,6 +6,13 @@ const body = document.getElementById("post-body");
 const media = document.getElementById("media");
 const tags = document.getElementById("tags");
 
+/**
+ * Lets user create post
+ * @param {string} url - URL for the POST request
+ * @param {object} data - The post data from the create post form
+ * @returns {object} - Post data
+ */
+
 async function createPost(url, data) {
   try {
     const accessToken = localStorage.getItem("accessToken");

@@ -25,7 +25,6 @@ export async function fetchSpecificPost(url) {
 }
 
 function displaySpecificPost(post) {
-  console.log(post);
   document.title = `${post.author.name} - ${post.title}`;
   breadcrumb.textContent = `${post.author.name} - ${post.title}`;
   postContainer.append(specificPostTemplate(post));

@@ -3,6 +3,7 @@ export function profilePostTemplate(data) {
 
   /// Header elements
   const header = document.createElement("div");
+  const specificPostLink = document.createElement("a");
   const headerText = document.createElement("div");
   const authorContainer = document.createElement("h3");
   const timeContainer = document.createElement("p");
@@ -23,7 +24,7 @@ export function profilePostTemplate(data) {
 
   /// header classes
   header.classList.add("row", "no-wrap");
-  headerText.classList.add("col-auto", "w-50");
+  specificPostLink.classList.add("col-auto", "w-50", "text-decoration-none");
   authorContainer.classList.add("m-0", "mt-1");
   timeContainer.classList.add("text-muted");
   avatarContainer.classList.add("col-auto");
@@ -33,6 +34,7 @@ export function profilePostTemplate(data) {
   const formattedCreated = new Date(created).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
   const formattedUpdated = new Date(updated).toLocaleString("en-GB", { timeStyle: "short", dateStyle: "long" });
 
+  specificPostLink.href = `specific-post.html?id=${id}`;
   authorContainer.textContent = owner;
   timeContainer.textContent = formattedCreated;
   if (created !== updated) {
@@ -48,7 +50,8 @@ export function profilePostTemplate(data) {
 
   avatarContainer.append(avatar);
   headerText.append(authorContainer, timeContainer);
-  header.append(avatarContainer, headerText, dropdown);
+  specificPostLink.append(headerText);
+  header.append(avatarContainer, specificPostLink, dropdown);
 
   /// Body
   const content = document.createElement("div");
