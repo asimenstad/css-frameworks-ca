@@ -1,0 +1,14 @@
+.btn.gradient {
+  background: $gradient;
+  background-size: 300% 100%;
+  transition: 0.2s ease-in-out;
+}
+
+.btn.gradient:hover {
+  background-position: 100% 0;
+  transition: 0.2s ease-in-out;
+}
+
+.form-select {
+  min-width: 110px;
+}

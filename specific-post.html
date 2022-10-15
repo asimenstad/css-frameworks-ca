@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title></title>
     <link rel="stylesheet" href="dist/css/styles.css" />
     <script
       defer
@@ -51,59 +51,13 @@
     </header>
     <main class="py-4 min-vh-100">
       <div class="container row p-0 mx-auto">
-        <div class="container col-md-4 d-flex flex-column gap-3 mb-3">
-          <div class="card border-0">
-            <div class="card-body">
-              <h2 class="mb-3 text-md-center fs-5">Find people</h2>
-              <div class="container d-flex flex-md-column gap-3 overflow-auto profiles mx-auto" id="profiles"></div>
-            </div>
-          </div>
-        </div>
-        <div class="container col-md-8 d-flex flex-column gap-3">
-          <div class="d-flex gap-3">
-            <form class="d-flex me-auto flex-fill" role="search" id="search-form">
-              <div class="input-group">
-                <input
-                  class="form-control border-0 bg-white"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  id="search"
-                />
-                <button class="btn btn-primary gradient" type="submit">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-search"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </form>
-            <form id="sort-form">
-              <select
-                name="sort"
-                id="sort"
-                class="form-select bg-white text-primary btn-sort border-0 ms-auto"
-                aria-label="Sort posts by"
-              >
-                <option selected>Sort by</option>
-                <option value="newest">Newest</option>
-                <option value="oldest">Oldest</option>
-                <option value="today">Today</option>
-                <option value="comments">Comments</option>
-                <option value="images">Images</option>
-              </select>
-            </form>
-          </div>
-          <div id="post-feed-container"></div>
-        </div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item active" id="breadcrumb" aria-current="page"></li>
+          </ol>
+        </nav>
+        <div id="post-container"></div>
       </div>
     </main>
     <footer class="bg-white p-3">
